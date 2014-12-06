@@ -7,7 +7,7 @@
 
 #include "Plane.h"
 
-Plane PlaneMake(Point position, Vector2d velocity) {
+poly Plane PlaneMake(poly Point position, poly Vector2d velocity) {
 	Plane result;
 	result.position = position;
 	result.velocity = velocity;
@@ -26,7 +26,7 @@ Plane PlaneMake(Point position, Vector2d velocity) {
 poly Plane PlaneMakeRandom() {
 	poly Point randomPosition = PointMakeRandom();
 	poly Vector2d randomVelocity = Vector2dMakeRandom();
-	Plane result = PlaneMake(randomPosition, randomVelocity);
+	poly Plane result = PlaneMake(randomPosition, randomVelocity);
 	return result;
 }
 
