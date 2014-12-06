@@ -17,7 +17,7 @@ typedef struct Plane {
 	Vector2d velocity;
 } Plane;
 
-poly Plane PlaneMake(Point position, Vector2d velocity);
+// poly Plane PlaneMake(Point position, Vector2d velocity);
 // poly Plane PlaneMake(float x, float y, float magnitude, radian direction);
 poly Plane PlaneMakeRandom(cs_rand48_stream stream);
 poly Plane PlaneMakeRandomGaussian(cs_rand48_stream stream, float peak);

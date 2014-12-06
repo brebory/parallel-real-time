@@ -7,12 +7,12 @@
 
 #include "Plane.h"
 
-poly Plane PlaneMake(Point position, Vector2d velocity) {
-	poly Plane result;
-	result.position = position;
-	result.velocity = velocity;
-	return result;
-}
+//poly Plane PlaneMake(Point position, Vector2d velocity) {
+//	poly Plane result;
+//	result.position = position;
+//	result.velocity = velocity;
+//	return result;
+//}
 
 //Plane PlaneMake(float x, float y, float magnitude, radian direction) {
 //	Plane result;
