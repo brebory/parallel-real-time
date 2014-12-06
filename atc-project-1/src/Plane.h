@@ -10,6 +10,7 @@
 
 #include "AirTrafficControlUtilities.h"
 #include <rngp.h>
+#include <lib_ext.h>
 
 typedef struct Plane {
 	Point position;
@@ -18,7 +19,7 @@ typedef struct Plane {
 
 poly Plane PlaneMake(Point position, Vector2d velocity);
 // poly Plane PlaneMake(float x, float y, float magnitude, radian direction);
-poly Plane PlaneMakeRandom();
-poly Plane PlaneMakeRandomGaussian(float peak);
+poly Plane PlaneMakeRandom(cs_rand48_stream stream);
+poly Plane PlaneMakeRandomGaussian(cs_rand48_stream stream, float peak);
 
 #endif /* PLANE_H_ */

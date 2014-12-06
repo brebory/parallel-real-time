@@ -17,7 +17,7 @@ typedef struct Grid {
 	float height;
 } Grid;
 
-poly Plane atc_create();
+poly Plane atc_create(cs_rand48_stream stream);
 void atc_update(Grid, poly Plane); /* Updates Plane for dt 0.5s */
 void atc_display(poly Plane);
 

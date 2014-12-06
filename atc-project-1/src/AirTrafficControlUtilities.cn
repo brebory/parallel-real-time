@@ -6,8 +6,6 @@
  */
 #include "AirTrafficControlUtilities.h"
 #include <stdlib.h>
-#include <rngp.h>
-#include <lib_ext.h>
 
 #define M_PI 3.14159265358979323846
 #define MAXIMUM_RANDOM_MAGNITUDE 20
@@ -19,10 +17,10 @@ Point PointMake(float x, float y) {
 	return result;
 }
 
-Point PointMakeRandom() {
+Point PointMakeRandom(cs_rand48_stream stream) {
 	Point result;
-	result.x = cs_rand48();
-	result.y = cs_rand48();
+	result.x = cs_frand48(stream);
+	result.y = cs_frand48(stream);
 	return result;
 }
 
@@ -33,10 +31,10 @@ Vector2d Vector2dMake(float dx, float dy) {
 	return result;
 }
 
-Vector2d Vector2dMakeRandom() {
+Vector2d Vector2dMakeRandom(cs_rand48_stream stream) {
 	Vector2d result;
-	result.dx = cs_rand48();
-	result.dy = cs_rand48();
+	result.dx = cs_frand48(stream);
+	result.dy = cs_frand48(stream);
 	return result;
 }
 

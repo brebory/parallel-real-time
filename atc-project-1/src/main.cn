@@ -7,6 +7,11 @@ int main(int argc, char *argv[]) {
 	poly Plane plane;
 	Grid grid;
 	int i;
+	CS_DECLARE_RNG_STREAM(rand48, x, y);
+	
+	
+	// Initialize rng stream
+    cs_init_rng_multiseed(rand48, x, y, 1234);
 
 	plane = atc_create();
 	grid.origin = PointMake(0, 0);

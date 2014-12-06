@@ -10,9 +10,9 @@
 #include <stdiop.h>
 #include <lib_ext.h>
 
-poly Plane atc_create() {
+poly Plane atc_create(cs_rand48_stream stream) {
 	poly Plane result;
-	result = PlaneMakeRandom();
+	result = PlaneMakeRandom(stream);
 	return result;
 }
 
