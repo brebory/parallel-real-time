@@ -23,14 +23,14 @@ Plane PlaneMake(Point position, Vector2d velocity) {
 //	return result;
 //}
 
-Plane PlaneMakeRandom() {
+poly Plane PlaneMakeRandom() {
 	Point randomPosition = PointMakeRandom();
 	Vector2d randomVelocity = Vector2dMakeRandom();
 	Plane result = PlaneMake(randomPosition, randomVelocity);
 	return result;
 }
 
-Plane PlaneMakeRandomGaussian(float peak) {
+poly Plane PlaneMakeRandomGaussian(float peak) {
 	// TODO: Unstub
 	return PlaneMakeRandom();
 }
