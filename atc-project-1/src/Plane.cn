@@ -14,14 +14,14 @@ Plane PlaneMake(Point position, Vector2d velocity) {
 	return result;
 }
 
-Plane PlaneMake(float x, float y, float magnitude, radian direction) {
-	Plane result;
-	result.position.x = x;
-	result.position.y = y;
-	result.velocity.magnitude = magnitude;
-	result.velocity.direction = direction;
-	return result;
-}
+//Plane PlaneMake(float x, float y, float magnitude, radian direction) {
+//	Plane result;
+//	result.position.x = x;
+//	result.position.y = y;
+//	result.velocity.magnitude = magnitude;
+//	result.velocity.direction = direction;
+//	return result;
+//}
 
 Plane PlaneMakeRandom() {
 	Point randomPosition = PointMakeRandom();

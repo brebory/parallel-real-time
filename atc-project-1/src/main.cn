@@ -4,10 +4,19 @@
 
 int main(int argc, char *argv[]) {
 	// Run simulation for MAX_ITER iterations.
-	atc_create();
-	for (int i = 0; i < MAX_ITER; i++) {
-		atc_display();
-		atc_update();
+	poly Plane plane;
+	Grid grid;
+	int i;
+
+	plane = atc_create();
+	grid.origin = PointMake(0, 0);
+	grid.width = 128.0;
+	grid.height = 128.0;
+
+	for (i = 0; i < MAX_ITER; i++) {
+		atc_display(plane);
+		atc_update(grid, plane);
 	}
+
 	return 0;
 }
