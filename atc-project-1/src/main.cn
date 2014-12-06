@@ -11,7 +11,7 @@ int main(int argc, char *argv[]) {
 	
 	
 	// Initialize rng stream
-    cs_init_rng_multiseed(rand48, x, y, 1234);
+    cs_init_rng_multiseed(rand48, &x, &y, 1234);
 
 	plane = atc_create();
 	grid.origin = PointMake(0, 0);
