@@ -24,8 +24,8 @@ Plane PlaneMake(Point position, Vector2d velocity) {
 //}
 
 poly Plane PlaneMakeRandom() {
-	Point randomPosition = PointMakeRandom();
-	Vector2d randomVelocity = Vector2dMakeRandom();
+	poly Point randomPosition = PointMakeRandom();
+	poly Vector2d randomVelocity = Vector2dMakeRandom();
 	Plane result = PlaneMake(randomPosition, randomVelocity);
 	return result;
 }
