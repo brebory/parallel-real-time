@@ -7,8 +7,16 @@
 
 #include "AirTrafficControlSimulator.h"
 #include <math.h>
+#include <lib_ext.h>
+#include <stdiop.h>
 
-void update(Grid grid, poly Plane plane) {
+poly Plane atc_create() {
+	poly Plane result;
+	result = PlaneMakeRandom();
+	return result;
+}
+
+void atc_update(Grid grid, poly Plane plane) {
 	// Updates plane coordinates for 0.5s time-step according to specification.
 	if ((plane.position.x + plane.velocity.dx) < grid.width) {
 		if (abs(plane.position.y + plane.velocity.dy) < grid.height) {
@@ -34,4 +42,10 @@ void update(Grid grid, poly Plane plane) {
 		}
 		plane.position.y = (plane.velocity.dy / plane.velocity.dx) * plane.position.x;
 	}
+}
+
+void atc_display(poly Plane plane) {
+	printf("###############\nCurrent Simulation Status:\n");
+	printfp("Plane #%d: x: %f y: %f\n", get_penum(), plane.position.x, plane.position.y);
+	printf("###############\n");
 }

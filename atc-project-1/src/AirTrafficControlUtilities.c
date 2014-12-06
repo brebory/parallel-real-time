@@ -18,7 +18,7 @@ Point PointMake(float x, float y) {
 	return result;
 }
 
-Point PointMakeRandom() {
+poly Point PointMakeRandom() {
 	Point result;
 	result.x = cs_rand48();
 	result.y = cs_rand48();
@@ -32,14 +32,14 @@ Vector2d Vector2dMake(float dx, float dy) {
 	return result;
 }
 
-Vector2d Vector2dMakeRandom() {
-	Vector2d result;
+poly Vector2d Vector2dMakeRandom() {
+	poly Vector2d result;
 	result.dx = cs_rand48();
 	result.dy = cs_rand48();
 	return result;
 }
 
-Vector2d Vector2dMakeRandomGaussian(float peak) {
+poly Vector2d Vector2dMakeRandomGaussian(float peak) {
 	// TODO: Unstub, use gaussian distribution
 	return Vector2dMakeRandom();
 }

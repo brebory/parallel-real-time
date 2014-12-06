@@ -17,7 +17,8 @@ typedef struct Grid {
 	float height;
 } Grid;
 
-void update(Grid, poly Plane); /* Updates Plane for dt 0.5s */
-// void display();
+poly Plane atc_create();
+void atc_update(Grid, poly Plane); /* Updates Plane for dt 0.5s */
+void atc_display(poly Plane);
 
 #endif /* AIRTRAFFICCONTROLSIMULATOR_H_ */
