@@ -7,6 +7,7 @@
 #include "AirTrafficControlUtilities.h"
 #include <stdlib.h>
 #include <rngp.h>
+#include <lib_ext.h>
 
 #define M_PI 3.14159265358979323846
 #define MAXIMUM_RANDOM_MAGNITUDE 20

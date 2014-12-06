@@ -7,8 +7,8 @@
 
 #include "AirTrafficControlSimulator.h"
 #include <math.h>
-#include <lib_ext.h>
 #include <stdiop.h>
+#include <lib_ext.h>
 
 poly Plane atc_create() {
 	poly Plane result;
