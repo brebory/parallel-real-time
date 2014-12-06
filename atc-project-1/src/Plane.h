@@ -12,11 +12,11 @@
 #include <rngp.h>
 
 typedef struct Plane {
-	poly Point position;
-	poly Vector2d velocity;
+	Point position;
+	Vector2d velocity;
 } Plane;
 
-poly Plane PlaneMake(poly Point position, poly Vector2d velocity);
+poly Plane PlaneMake(Point position, Vector2d velocity);
 // poly Plane PlaneMake(float x, float y, float magnitude, radian direction);
 poly Plane PlaneMakeRandom();
 poly Plane PlaneMakeRandomGaussian(float peak);

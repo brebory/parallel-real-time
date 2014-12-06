@@ -16,7 +16,7 @@ typedef struct Point {
 } Point;
 
 Point PointMake(float x, float y);
-poly Point PointMakeRandom();
+Point PointMakeRandom();
 
 typedef struct Vector2d {
 	float dx;
@@ -25,7 +25,7 @@ typedef struct Vector2d {
 
 Vector2d Vector2dMake(float dx, float dy);
 
-poly Vector2d Vector2dMakeRandom(); /* Returns a random unit vector */
-poly Vector2d Vector2dMakeRandomGaussian(float peak); /* Returns a random vector with magnitude generated from gaussian distribution peaking at peak */
+Vector2d Vector2dMakeRandom(); /* Returns a random unit vector */
+Vector2d Vector2dMakeRandomGaussian(float peak); /* Returns a random vector with magnitude generated from gaussian distribution peaking at peak */
 
 #endif /* AIRTRAFFICCONTROLUTILITIES_H_ */
