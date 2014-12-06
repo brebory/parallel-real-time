@@ -12,8 +12,8 @@
 #include <rngp.h>
 
 typedef struct Plane {
-	Point position;
-	Vector2d velocity;
+	poly Point position;
+	poly Vector2d velocity;
 } Plane;
 
 poly Plane PlaneMake(poly Point position, poly Vector2d velocity);

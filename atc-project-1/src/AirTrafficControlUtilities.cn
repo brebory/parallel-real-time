@@ -20,7 +20,7 @@ Point PointMake(float x, float y) {
 }
 
 poly Point PointMakeRandom() {
-	Point result;
+	poly Point result;
 	result.x = cs_rand48();
 	result.y = cs_rand48();
 	return result;
