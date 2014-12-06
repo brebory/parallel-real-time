@@ -1,0 +1,28 @@
+/*
+ * Radar.h
+ *
+ *  Created on: Dec 6, 2014
+ *      Author: broberto
+ */
+
+ 
+ #include "Radar.h"
+ 
+ Radar[96] radar_update(cs_rand48_stream stream, Radar[96] radar, poly Plane plane) {
+    mono int * poly dst_addr;
+    poly Radar element;
+    
+    element.position = plane.position;
+    
+    // Add random noise
+    element.position.x += frand48(stream) / 5;
+    element.poistion.y += frand48(stream) / 5;
+    
+    // Copy from poly memory to mono memory
+    dst_addr = radar + get_penum();
+    memcpyp2m(dst_addr, &element, sizeof(Radar));
+    
+    // Todo: randomize array order
+    
+    return radar;
+}

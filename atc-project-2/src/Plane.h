@@ -15,9 +15,12 @@
 #include <rngp.h>
 #include <lib_ext.h>
 
+typedef float feet;
+
 typedef struct Plane {
 	Point position;
 	Vector2d velocity;
+	feet altitude;
 } Plane;
 
 poly Plane PlaneMakeRandom(cs_rand48_stream stream);

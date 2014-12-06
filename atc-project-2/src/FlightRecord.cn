@@ -1,0 +1,44 @@
+/*
+ * FlightRecord.h
+ *
+ *  Created on: Dec 6, 2014
+ *      Author: broberto
+ *
+ */
+
+#include "FlightRecord.h"
+#include <math.h>
+
+poly FlightRecord flight_record_update(poly Plane plane, poly FlightRecord record) {
+    Point nextPosition;
+    
+    record.lastPosition = plane.position;
+    nextPosition.x = record.lastPosition.x + plane.velocity.dx;
+    nextPosition.y = record.lastPosition.y + plane.velocity.dy;
+    record.nextPosition = nextPosition;
+    
+    return record;
+    
+}
+
+poly correlate(Radar *radar, poly FlightRecord record) {
+    poly short mask = 1;
+    int i;
+    for (i = 0; i < 96; i++) {
+        if (mask) {
+            if ((abs(record.nextPosition.x - radar[i].position.x) < 1.0) && 
+                 abs(record.nextPosition.y - radar[i].position.y) < 1.0)) {
+                 
+                 // Update match property on radar according to algorithm
+                 if (radar[i].match == 1) {
+                    radar[i].match = -1;
+                 } else if (radar[i].match == 0) {
+                    radar.match[i] = 1;
+                 }
+                 
+                 // Skip this PE from now on
+                 mask = 0;
+            }
+        }
+    }
+}

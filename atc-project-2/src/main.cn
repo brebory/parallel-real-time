@@ -6,6 +6,8 @@ int main(int argc, char *argv[]) {
 	poly Plane plane;
 	Grid grid;
 	int i;
+	Radar[96] radar;
+	poly FlightRecord record;
 	CS_DECLARE_RNG_STREAM(rand48, stream, state);
 	
 	
@@ -20,8 +22,7 @@ int main(int argc, char *argv[]) {
 
     // Run simulation for MAX_ITER iterations.
 	for (i = 0; i < MAX_ITER; i++) {
-		atc_display(plane);
-		atc_update(grid, plane);
+		atc_update(grid, plane, record, radar);
 	}
 
 	return 0;

@@ -10,9 +10,13 @@
 poly Plane PlaneMakeRandom(cs_rand48_stream stream) {
 	Point randomPosition = PointMakeRandom(stream);
 	Vector2d randomVelocity = Vector2dMakeRandom(stream);
+	feet randomAltitude = cs_frand48(stream);
+	
 	poly Plane result;
 	result.position = randomPosition;
 	result.velocity = randomVelocity;
+	// Generate random altitude between 3000 and 6000 feet.
+	result.altitude = (randomAltitude * 3000.0) + 3000.0;
 	return result;
 }
 

@@ -15,6 +15,8 @@
 
 #include "AirTrafficControlUtilities.h"
 #include "Plane.h"
+#include "FlightRecord.h"
+#include "Radar.h"
 
 typedef struct Grid {
 	Point origin;
@@ -23,7 +25,7 @@ typedef struct Grid {
 } Grid;
 
 poly Plane atc_create(cs_rand48_stream stream);
-void atc_update(Grid, poly Plane); /* Updates Plane for dt 0.5s */
-void atc_display(poly Plane);
+void atc_update(Grid grid, poly Plane plane, poly FlightRecord record, Radar *radar); /* Updates Plane for dt 0.5s */
+void atc_display(poly Plane plane, poly FlightRecord record, Radar *radar);
 
 #endif /* AIRTRAFFICCONTROLSIMULATOR_H_ */

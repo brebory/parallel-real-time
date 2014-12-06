@@ -17,7 +17,7 @@ poly Plane atc_create(cs_rand48_stream stream) {
 	return result;
 }
 
-void atc_update(Grid grid, poly Plane plane) {
+void atc_update(Grid grid, poly Plane plane, poly FlightRecord record, Radar *radar) {
 	// Updates plane coordinates for 0.5s time-step according to specification.
 	if ((plane.position.x + plane.velocity.dx) < grid.width) {
 		if (abs(plane.position.y + plane.velocity.dy) < grid.height) {
@@ -43,6 +43,15 @@ void atc_update(Grid grid, poly Plane plane) {
 		}
 		plane.position.y = (plane.velocity.dy / plane.velocity.dx) * plane.position.x;
 	}
+	
+	// Update FlightRecord
+	flight_record_update(plane, record);
+	
+	// Update Radar
+	radar_update(stream, radar, plane);
+	
+	// Perform tracking and correlation
+	correlate(radar, record);
 }
 
 void atc_display(poly Plane plane) {
